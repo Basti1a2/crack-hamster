@@ -1,0 +1,195 @@
+:root {
+  --bg: #0f1c23;           /* dunkles blaugrün – Hintergrund */
+  --card: #16262f;         /* leicht heller Ton für Panels */
+  --accent: #9c6eff;       /* violett – für Buttons und Überschriften */
+  --accent-2: #3cbfa4;     /* türkisgrün – sekundäre Akzente */
+  --warm: #b47a4a;         /* warme Farbe – für Highlights */
+  --text: #e6eef8;
+  --muted: #a4b0b8;
+  --radius: 12px;
+  --transition: 250ms ease;
+  font-family: "Inter", sans-serif;
+}
+
+/* Basislayout */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HERO Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(145deg, #0f1c23 0%, #16262f 100%);
+  overflow: hidden;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(156,110,255,0.25), transparent 70%);
+  z-index: 0;
+}
+.hero .content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  color: var(--accent);
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+}
+
+/* Download Button */
+.btn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(60,191,164,0.25);
+}
+.btn:hover {
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(156,110,255,0.35);
+}
+
+/* Features Section */
+.features {
+  padding: 80px 20px;
+  text-align: center;
+}
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--accent);
+}
+.features .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.card h3 {
+  color: var(--warm);
+}
+
+/* Screenshot Section */
+.screenshot {
+  text-align: center;
+  padding: 60px 20px 100px;
+}
+.screenshot img {
+  max-width: 90%;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+}
+
+/* Navigation */
+/* Navbar kleiner machen */
+.navbar {
+  background: var(--card);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1000px;     /* schmaler als vorher */
+  margin: 0 auto;
+  padding: 8px 16px;     /* weniger Innenabstand */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition), transform var(--transition), box-shadow var(--transition);
+  padding: 6px 10px;
+  border-radius: var(--radius);
+}
+
+.nav-links a:hover {
+  color: var(--accent-2);
+  transform: translateY(-3px); /* leichtes Schweben nach oben */
+  box-shadow: 0 6px 12px rgba(156,110,255,0.25); /* sanfter Schatten */
+  background: rgba(255,255,255,0.05); /* dezenter Hintergrund */
+}
+
+/* Platz nach oben schaffen, damit Hero nicht verdeckt wird */
+.hero {
+  padding-top: 70px;
+}
+
+.logo img {
+  height: 70px;       /* passe die Höhe nach Wunsch an */
+  width: auto;        /* Breite automatisch, damit das Seitenverhältnis stimmt */
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+}
+
