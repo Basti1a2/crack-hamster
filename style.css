@@ -132,6 +132,7 @@ body {
 
 /* Navigation */
 /* Navbar kleiner machen */
+/*
 .navbar {
   background: var(--card);
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -139,12 +140,13 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
+  
 }
 
 .nav-container {
-  max-width: 1000px;     /* schmaler als vorher */
+  max-width: 1000px;     
   margin: 0 auto;
-  padding: 8px 16px;     /* weniger Innenabstand */
+  padding: 0px 16px;     
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -176,10 +178,125 @@ body {
 
 .nav-links a:hover {
   color: var(--accent-2);
-  transform: translateY(-3px); /* leichtes Schweben nach oben */
-  box-shadow: 0 6px 12px rgba(156,110,255,0.25); /* sanfter Schatten */
-  background: rgba(255,255,255,0.05); /* dezenter Hintergrund */
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 12px rgba(156,110,255,0.25); 
+  background: rgba(255,255,255,0.05); 
+*/
+/* Navigation – Stil angelehnt an DeskThing */
+/* ==========================
+   Navigation (ohne JS)
+========================== */
+.site-nav {
+  background: #0f1724;  /* dunkler Hintergrund */
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 16px 0;
+  width: 100%;
+  position: sticky;   /* bleibt beim Scrollen oben kleben */
+  top: 0;
+  z-index: 999;
 }
+
+.nav-container {
+  max-width: 2800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* links vs. rechts */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Abstand zwischen Logo und Links */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-logo {
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  color: #9c6eff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+
+.nav-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition), transform var(--transition), box-shadow var(--transition);
+  padding: 6px 10px;
+  border-radius: var(--radius);
+}
+
+.nav-links a:hover {
+  color: var(--accent-2);
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 12px rgba(156,110,255,0.25); 
+  background: rgba(255,255,255,0.05); 
+}
+
+/* Download Button in der Navigation */
+.nav-btn {
+  background: linear-gradient(90deg, #9c6eff, #3cbfa4);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.nav-btn:hover {
+  box-shadow: 0 4px 12px rgba(156,110,255,0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive (Mobile Darstellung) */
+@media (max-width: 700px) {
+  .nav-links {
+    display: none; /* einfache Variante: Menü wird versteckt auf Handy */
+  }
+  .nav-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Logo mit Text ===== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Abstand zwischen Bild und Text */
+  text-decoration: none;
+  color: #9c6eff; /* violett wie bisher */
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.nav-logo img {
+  width: 40px;          /* Logo-Größe */
+  height: 40px;
+  object-fit: contain;  /* verzerrt das Bild nicht */
+  border-radius: 8px;   /* abgerundete Ecken, optional */
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover img {
+  transform: rotate(-5deg) scale(1.05); /* kleiner Spaß-Effekt beim Hover */
+}
+
+
 
 /* Platz nach oben schaffen, damit Hero nicht verdeckt wird */
 .hero {
@@ -192,4 +309,92 @@ body {
   display: block;
   background-color: rgba(0, 0, 0, 0);
 }
+/* Features Section – Erweiterte Gestaltung */
+.features-intro {
+  padding: 100px 20px 40px;
+  background: linear-gradient(120deg, #0f1c23 0%, #16262f 100%);
+  text-align: center;
+}
+.features-intro h1 {
+  color: var(--accent);
+  font-size: 2.6rem;
+}
+.features-intro p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
+.feature-section {
+  padding: 60px 20px;
+}
+.feature-section.alt {
+  background: radial-gradient(circle at 20% 30%, rgba(60,191,164,0.08), transparent 70%);
+}
+.feature-section h2 {
+  color: var(--accent);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+.feature-card .badge {
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.flow-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.flow-row.reverse {
+  direction: rtl;
+}
+.flow-row.reverse .flow-text,
+.flow-row.reverse .flow-media {
+  direction: ltr;
+}
+.flow-media .media-box {
+  background: var(--card);
+  border-radius: var(--radius);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.feature-highlight {
+  padding: 60px 20px;
+  background: radial-gradient(circle at 30% 40%, rgba(156,110,255,0.18), transparent 70%);
+}
+.highlight-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 30px;
+  text-align: center;
+}
+.highlight-card h3 {
+  color: var(--warm);
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaQuest – Screenshots</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* === Screenshot-Seite im JavaQuest-Stil === */
+    body {
+      background: #0f1c23;
+      color: #e6eef8;
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      padding-top: 0px;
+    }
+
+    .screenshots {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .screenshots h1 {
+      font-size: 2.5rem;
+      color: #9c6eff;
+      margin-bottom: 0.5em;
+    }
+
+    .screenshots p {
+      color: #a4b0b8;
+      font-size: 1.1rem;
+      margin-bottom: 2.5em;
+    }
+
+    /* Grid für Bilder */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .screenshot {
+      position: relative;
+      background: #16262f;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .screenshot:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(156,110,255,0.3);
+    }
+
+    .screenshot img {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    .caption {
+      padding: 14px;
+      font-size: 0.95rem;
+      color: #e6eef8;
+      background: rgba(0,0,0,0.25);
+      text-align: left;
+    }
+
+    /* Download Button am Ende */
+    .download-btn {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 14px 30px;
+      background: linear-gradient(90deg, #9c6eff, #3cbfa4);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(60,191,164,0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav-container">
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="CrackHamster Logo">
+        <span>CrackHamster</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="features.html">Features</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="https://github.com/Simon2009sch/modded-hamster" target="_blank" rel="noopener noreferrer">Github</a></li>
+        <li><a href="about.html">Über uns</a></li>
+      </ul>
+    </div>
+
+    <!-- Download Button -->
+    <a href="https://github.com/Simon2009sch/modded-hamster/releases" target="_blank" rel="noopener noreferrer" class="nav-btn">Download</a>
+  </div>
+</nav>
+
+  <!-- Screenshots Sektion -->
+  <section class="screenshots" id="screenshots">
+    <h1>Ein Blick in CrackHamster</h1>
+    <p>Hier siehst du, wie CrackHamster aussieht – vom Hauptmenü über Aufgaben bis zur Überdosis!</p>
+
+    <div class="screenshot-grid">
+      <div class="screenshot">
+        <img src="https://placehold.co/600x400/0f1c23/9c6eff?text=Hauptmenü" alt="Screenshot 1">
+        <div class="caption">Das Hauptmenü mit deinen Quests und Fortschritt.</div>
+      </div>
+
+      <div class="screenshot">
+        <img src="https://placehold.co/600x400/16262f/3cbfa4?text=Level+1" alt="Screenshot 2">
+        <div class="caption">Lerne Grundlagen wie Variablen, Datentypen und Drogenkonsum.</div>
+      </div>
+
+      <div class="screenshot">
+        <img src="https://placehold.co/600x400/1b2f3a/b47a4a?text=Code+Editor" alt="Screenshot 3">
+        <div class="caption">Integrierter Code-Editor zum Üben deiner Rauch-Fähigkeiten.</div>
+      </div>
+
+      <div class="screenshot">
+        <img src="https://placehold.co/600x400/0f1c23/3cbfa4?text=Mission+Erfolgreich" alt="Screenshot 4">
+        <div class="caption">Schließe Missionen ab und verdiene XP & neue Drogen.</div>
+      </div>
+    </div>
+
+    <a href="#download" class="download-btn">📦 CrackHamster herunterladen</a>
+  </section>
+    <!-- FOOTER -->
+  <footer class="footer">
+    <nav>
+        <ul>
+            <p>
+                <a href="index.html">Home</a></li>
+            </p>
+            <p>
+                <a href="Rechtliches.html">Rechtliches</a></li>
+            </p>
+            <p>
+                <a href="about.html">Team</a></li>
+            </p>
+        </ul>
+    </nav>
+    <nav>
+      <ul>
+        <p>
+          © 2025 CrackHamster | Entwickelt unter starken Drogeneinfluss in Java
+        </p>
+        <p>
+          By Bastian1a2
+        </p>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
